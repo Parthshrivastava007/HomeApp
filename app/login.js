@@ -16,6 +16,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(""); 
   const router = useRouter();
 
   const handleLogin = async () => {
@@ -30,18 +31,23 @@ export default function Login() {
         parsedUser.password === password
       ) {
         setError("");
-        router.replace("/Home");
+        setSuccess("Logged in successfully! Redirecting...");
+        setTimeout(() => {
+          router.replace("/Home");
+        }, 1500);
       } else {
         setError("Invalid username/email or password");
+        setSuccess("");
       }
     } catch (e) {
       setError("Login failed");
+      setSuccess("");
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Username or Email</Text>
+      <Text style={styles.label}>Enter your credentials</Text>
       <TextInput
         style={styles.input}
         placeholder="Enter your username/email"
@@ -70,12 +76,13 @@ export default function Login() {
       </View>
 
       {error ? <Text style={styles.error}>{error}</Text> : null}
+      {success ? <Text style={styles.success}>{success}</Text> : null}
 
       <Button title="Login" onPress={handleLogin} />
 
       <View style={styles.signupContainer}>
         <Text style={{ marginRight: 4 }}>Don't have an account?</Text>
-        <TouchableOpacity onPress={() => router.push("/signup")}>
+        <TouchableOpacity onPress={() => router.push("/SignUp")}>
           <Text style={styles.signupText}>Sign up</Text>
         </TouchableOpacity>
       </View>
@@ -112,6 +119,11 @@ const styles = StyleSheet.create({
   },
   error: {
     color: "red",
+    marginBottom: 12,
+    textAlign: "center",
+  },
+  success: {
+    color: "green",
     marginBottom: 12,
     textAlign: "center",
   },

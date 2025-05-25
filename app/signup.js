@@ -35,7 +35,7 @@ export default function Signup() {
 
       setTimeout(() => {
         setSuccessMessage("");
-        router.replace("/login");
+        router.replace("/Login");
       }, 1500);
     } catch (error) {
       console.error("Failed to save user", error);

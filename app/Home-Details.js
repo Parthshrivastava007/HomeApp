@@ -24,41 +24,35 @@ export default function HomeDetails() {
     imagerUrl,
   } = useLocalSearchParams();
 
-  // Parse distance meters from string like "123 m"
   const distanceMeters = parseInt(distance, 10);
 
-  // Handler for Unlock button
   const handleUnlock = () => {
     Alert.alert("Unlocked!", "You have successfully unlocked the home.");
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#fff" }}>
-      {/* Header */}
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>Home Details</Text>
-      </View>
-
-  
       <ScrollView contentContainerStyle={styles.container}>
-     
         {imagerUrl ? (
           <Image source={{ uri: imagerUrl }} style={styles.image} />
         ) : null}
 
-   
         <Text style={styles.location}>
           {location} ({latitude}, {longitude})
         </Text>
 
-      
         <Text style={styles.description}>{description}</Text>
-
 
         <Text style={styles.fadedText}>
           Distance: {distance}
           {"\n"}Created At: {createdAt}
         </Text>
+
+        {distanceMeters > 30 && (
+          <Text style={styles.warningText}>
+            You are too far to unlock the home
+          </Text>
+        )}
 
         {/* Unlock Button */}
         <TouchableOpacity
@@ -77,7 +71,7 @@ export default function HomeDetails() {
               distanceMeters > 30 && { color: "#aaa" },
             ]}
           >
-            Unlock
+            Unlock Home
           </Text>
         </TouchableOpacity>
       </ScrollView>
@@ -86,20 +80,6 @@ export default function HomeDetails() {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderBottomWidth: 1,
-    borderColor: "#ddd",
-    backgroundColor: "#fff",
-  },
-  headerTitle: {
-    fontSize: 18,
-    fontWeight: "600",
-    marginLeft: 12,
-  },
   container: {
     padding: 16,
   },
@@ -125,6 +105,12 @@ const styles = StyleSheet.create({
     color: "#999",
     lineHeight: 20,
     marginBottom: 20,
+  },
+  warningText: {
+    color: "red",
+    fontSize: 14,
+    marginBottom: 12,
+    fontWeight: "500",
   },
   unlockButton: {
     paddingVertical: 14,

@@ -13,6 +13,7 @@ import {
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { useQuery } from "@tanstack/react-query";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const fetchHomes = async () => {
   const locations = ["Gurugram", "Delhi", "Noida"];
@@ -41,6 +42,11 @@ export default function HomeList() {
     queryFn: fetchHomes,
   });
 
+  const handleLogout = async () => {
+    await AsyncStorage.removeItem("user");
+    router.replace("/Login");
+  };
+
   if (isLoading) {
     return <ActivityIndicator size="large" style={{ marginTop: 40 }} />;
   }
@@ -52,10 +58,10 @@ export default function HomeList() {
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.header}>
-        <Pressable onPress={() => router.replace("/login")}>
-          <Ionicons name="arrow-back" size={24} color="black" />
-        </Pressable>
         <Text style={styles.headerTitle}>Available Homes</Text>
+        <TouchableOpacity onPress={handleLogout} style={styles.logoutButton}>
+          <Ionicons name="log-out-outline" size={24} color="red" />
+        </TouchableOpacity>
       </View>
 
       {/* Home Cards */}
@@ -73,7 +79,7 @@ export default function HomeList() {
             <Image source={{ uri: item.imagerUrl }} style={styles.image} />
             <View style={styles.cardContent}>
               <Text style={styles.title}>{item.location}</Text>
-              <Text numberOfLines={9} style={styles.description}>
+              <Text numberOfLines={5} style={styles.description}>
                 {item.description}
               </Text>
             </View>
@@ -98,6 +104,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "600",
     marginLeft: 12,
+  },
+  logoutButton: {
+    marginLeft: "auto",
+    paddingHorizontal: 8,
   },
   card: {
     backgroundColor: "#fff",
@@ -137,6 +147,11 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: "#555",
     marginBottom: 6,
+  },
+  distance: {
+    fontSize: 12,
+    color: "#888",
+    fontStyle: "italic",
   },
   error: {
     textAlign: "center",
