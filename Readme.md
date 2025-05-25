@@ -42,12 +42,12 @@ Users can sign up, log in (via username or email), view homes, and see details a
    npx expo start
 
    Then open the app in one of the following:
-   📱 Physical device: Install Expo Go from the Play Store, scan the QR code shown in terminal or browser
-   💻 Android emulator: Use Android Studio to launch a virtual device
+   * 📱 Physical device: Install Expo Go from the Play Store, scan the QR code shown in terminal or browser
+   * 💻 Android emulator: Use Android Studio to launch a virtual device
 
    ⚠️ Important:
-   Make sure your physical device or Android emulator is connected to the same Wi-Fi network as your laptop/PC.
-   Expo uses local network connection to stream the app — it will not work across different networks or mobile hotspots.
+   * Make sure your physical device or Android emulator is connected to the same Wi-Fi network as your laptop/PC.
+   * Expo uses local network connection to stream the app — it will not work across different networks or mobile hotspots.
 
 📡 API Used
 https://678f678849875e5a1a91b27f.mockapi.io/houses
