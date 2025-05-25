@@ -23,8 +23,8 @@ Users can sign up, log in (via username or email), view homes, and see details a
 
 1. Clone the Repository
 
-   git clone https://github.com/your-username/real-estate-app.git
-   cd real-estate-app
+   git clone https://github.com/Parthshrivastava007/HomeApp.git
+   cd HomeApp
 
 2. Install Dependencies
 
