@@ -23,8 +23,8 @@ Users can sign up, log in (via username or email), view homes, and see details a
 
 1. Clone the Repository
 
-   git clone https://github.com/Parthshrivastava007/HomeApp.git
-   cd HomeApp
+   -> git clone https://github.com/Parthshrivastava007/HomeApp.git
+   ->  cd HomeApp
 
 2. Install Dependencies
 
@@ -32,10 +32,10 @@ Users can sign up, log in (via username or email), view homes, and see details a
 
 3. Install Required Packages
 
-   npx expo install expo-router
-   npm install @tanstack/react-query
-   npx expo install @react-native-async-storage/async-storage
-   npx expo install @expo/vector-icons
+   -> npx expo install expo-router
+   -> npm install @tanstack/react-query
+   -> npx expo install @react-native-async-storage/async-storage
+   -> npx expo install @expo/vector-icons
 
 4. Running the App
 
