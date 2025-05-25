@@ -7,7 +7,6 @@ Users can sign up, log in (via username or email), view homes, and see details a
 * Store user credentials securely using AsyncStorage
 * React Query v5 for efficient API data fetching
 * Home list fetched from public mock API
-* Location and distance randomly assigned to each home
 * Navigation with Expo Router
 * Form input validation and clean UI
 
@@ -15,7 +14,7 @@ Users can sign up, log in (via username or email), view homes, and see details a
 * Expo
 * React Native
 * Expo Router
-* React Query (TanStack)
+* React Query 
 * AsyncStorage
 * Mock API
 
