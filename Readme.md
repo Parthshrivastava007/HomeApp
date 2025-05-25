@@ -2,29 +2,29 @@
 Users can sign up, log in (via username or email), view homes, and see details about each property.
 
 📦 Features
--> Login with username or email
--> Sign-up with inline email validation
--> Store user credentials securely using AsyncStorage
--> React Query v5 for efficient API data fetching
--> Home list fetched from public mock API
--> Location and distance randomly assigned to each home
--> Navigation with Expo Router
--> Form input validation and clean UI
+* Login with username or email
+* Sign-up with inline email validation
+* Store user credentials securely using AsyncStorage
+* React Query v5 for efficient API data fetching
+* Home list fetched from public mock API
+* Location and distance randomly assigned to each home
+* Navigation with Expo Router
+* Form input validation and clean UI
 
 🚀 Tech Stack
--> Expo
--> React Native
--> Expo Router
--> React Query (TanStack)
--> AsyncStorage
--> Mock API
+* Expo
+* React Native
+* Expo Router
+* React Query (TanStack)
+* AsyncStorage
+* Mock API
 
 🛠 Setup Instructions
 
 1. Clone the Repository
 
-   -> git clone https://github.com/Parthshrivastava007/HomeApp.git
-   ->  cd HomeApp
+   * git clone https://github.com/Parthshrivastava007/HomeApp.git
+   * cd HomeApp
 
 2. Install Dependencies
 
@@ -32,10 +32,10 @@ Users can sign up, log in (via username or email), view homes, and see details a
 
 3. Install Required Packages
 
-   -> npx expo install expo-router
-   -> npm install @tanstack/react-query
-   -> npx expo install @react-native-async-storage/async-storage
-   -> npx expo install @expo/vector-icons
+   * npx expo install expo-router
+   * npm install @tanstack/react-query
+   * npx expo install @react-native-async-storage/async-storage
+   * npx expo install @expo/vector-icons
 
 4. Running the App
 
